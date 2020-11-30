@@ -57,7 +57,7 @@ class VerifikasiTask {
                 public void onResponse(String response) {
                     ctx.startActivity(new Intent(ctx,MainActivity.class));
                     ((Activity)ctx).finish();
-                    Log.i("VOLLEY", response);
+                    Log.i("voli", response);
                 }
             }, new Response.ErrorListener() {
                 @Override
