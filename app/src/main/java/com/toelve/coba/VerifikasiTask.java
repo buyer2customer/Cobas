@@ -55,6 +55,8 @@ class VerifikasiTask {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
+                    ctx.startActivity(new Intent(ctx,MainActivity.class));
+                    ((Activity)ctx).finish();
                     Log.i("VOLLEY", response);
                 }
             }, new Response.ErrorListener() {
@@ -69,12 +71,11 @@ class VerifikasiTask {
                             JSONObject obj = new JSONObject(res);
                             Log.e("obj",obj.getString("message"));
                             String hasil=obj.getString("message");
-                            if(hasil.contains("Verification successful, you can now login")){
-                                ctx.startActivity(new Intent(ctx,MainActivity.class));
-                                ((Activity)ctx).finish();
-                            }else{
+                            Log.e("hasil",hasil);
+                            ctx.startActivity(new Intent(ctx,MainActivity.class));
+                            ((Activity)ctx).finish();
                                 Toast.makeText(ctx, obj.getString("message"), Toast.LENGTH_SHORT).show();
-                            }
+
 
 
 
