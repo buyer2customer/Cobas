@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             android:hint="Email"
-            app:helperText="e.g karli@yahoo.com"
+            app:helperText="e.g karli@yahoo.co.id"
             app:helperTextEnabled="true"
             style="@style/TextInputLayout"
             app:errorEnabled="true">
