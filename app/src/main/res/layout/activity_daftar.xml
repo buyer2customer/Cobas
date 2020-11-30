@@ -7,32 +7,21 @@
     android:padding="10dp"
     android:theme="@style/AppTheme"
     android:background="@drawable/bck"
-    tools:context=".MainActivity">
+    tools:context=".Daftar">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
         <TextView
-            android:layout_below="@+id/imageView"
+            android:layout_marginTop="10dp"
             android:id="@+id/tvHead"
             android:textSize="20sp"
             android:fontFamily="@font/ubuntu"
             android:gravity="center_horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
-            android:text="Login Page"
+            android:text="Register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -42,8 +31,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:hint="Username"
+            android:hint="Title"
             app:helperText="e.g karli"
+            app:helperTextEnabled="true"
+            style="@style/TextInputLayout"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTitle"
+                android:textColor="#000"
+                android:fontFamily="@font/roboto"
+                tools:targetApi="jelly_bean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@+id/name"
+            android:id="@+id/full"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="Full Name"
+            app:helperText="e.g Karli sukardi"
+            app:helperTextEnabled="true"
+            style="@style/TextInputLayout"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFullname"
+                android:textColor="#000"
+                android:fontFamily="@font/roboto"
+                tools:targetApi="jelly_bean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@+id/full"
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="E-mail"
+            app:helperText="e.g boyke1212@gmail.com"
             app:helperTextEnabled="true"
             style="@style/TextInputLayout"
             app:errorEnabled="true">
@@ -55,18 +89,18 @@
                 tools:targetApi="jelly_bean"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_below="@+id/name"
+            android:layout_below="@+id/email"
             android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             android:hint="Password"
-            app:helperText="e.g 123as12"
+            app:helperText="e.g boyke1212@gmail.com"
             app:helperTextEnabled="true"
             style="@style/TextInputLayout"
             app:passwordToggleEnabled="true"
@@ -82,21 +116,32 @@
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
-        <TextView
-            android:textStyle="italic"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_below="@+id/pass"
-            android:fontFamily="@font/roboto"
-            android:id="@+id/tvForgot"
-            android:layout_width="wrap_content"
+            android:id="@+id/conf"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Forgot Password"
-            android:layout_alignEnd="@id/pass"
-            android:layout_alignRight="@id/pass" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="Confirm Password"
+            app:helperText="e.g 123456"
+            app:helperTextEnabled="true"
+            style="@style/TextInputLayout"
+            app:passwordToggleEnabled="true"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etConfirm"
+                android:textColor="#000"
+                android:fontFamily="@font/roboto"
+                tools:targetApi="jelly_bean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
-            android:layout_below="@+id/tvForgot"
+            android:layout_below="@+id/conf"
             android:background="@drawable/button_orange_fade"
             android:padding="10dp"
             android:id="@+id/btMasuk"
@@ -104,19 +149,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:fontFamily="@font/roboto"
-            android:text="Login"
+            android:text="SUBMIT"
             android:textColor="#fff" />
 
-        <TextView
-            android:layout_below="@+id/btMasuk"
-            android:fontFamily="@font/roboto"
-            android:id="@+id/tvDaftar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Don't Have Account Yet ? Register"
-            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 </ScrollView>

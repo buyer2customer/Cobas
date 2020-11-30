@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Coba</string>
+    <string name="utama">http://apidev.pluginesia.com/api/authenticate</string>
+    <string name="register">http://apidev.pluginesia.com/api/register</string>
+    <string name="veremail">http://apidev.pluginesia.com/api/verify-email</string>
+
+    <string name="prefensi">coba</string>
 </resources>
